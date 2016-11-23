@@ -1,12 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class Grupos extends CI_Controller {
+class Foros extends CI_Controller {
 	function __construct() {
       
       parent::__construct();
       $this->load->database();   // Carreguem la base de dades
       $this->load->library('form_validation');  // La llibreria per fer els camps requerits
-    } 
-   	public function index() {
-		$this->load->view('grupos');
+    }
+
+  	public function index() {
+		$this->load->view('foros');
 	}
 }
