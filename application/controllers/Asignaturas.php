@@ -5,8 +5,37 @@ class Asignaturas extends CI_Controller {
       parent::__construct();
       $this->load->database();   // Carreguem la base de dades
       $this->load->library('form_validation');  // La llibreria per fer els camps requerits
+      $this->load->model('modelo_asignaturas');
     }
+
+    // Cargamos la pagina con los datos recibidos de la base de datos
+
     public function index() {
-		$this->load->view('asignaturas');
+
+    	$data = $this->modelo_asignaturas->getAsignatura();
+		if($data == null) {
+			$this->load->view('asignaturas');	
+		}
+		else {
+			$this->load->view('asignaturas', $data);
+		}
+	}
+
+	// Funcion utilizada para comprovar desde el servidor que los datos estan correctos y pasarlos al modelo para que los inserte en la base de datos.
+	public function insertarAssignaturas() {
+		$this->form_validation->set_rules('Asignatura', 'Asignatura', 'required|xss_clean');
+		$this->form_validation->set_rules('Profesor_asignado', 'Profesor_asignado', 'required|xss_clean');
+		$this->form_validation->set_message('required', 'El campo %s es obligado');
+	
+		if($this->form_validation->run() == FALSE) {
+			$data = $this->modelo_asignaturas->getAsignatura();
+			$this->load->view('asignaturas', $data);
+		}
+		else {
+			$asignatura = $this->input->post('Asignatura');
+			$profeasignado = $this->input->post('Profesor_asignado');
+			$this->modelo_asignaturas->insertarAssignatura($asignatura, $profeasignado);
+			redirect('Asignatura/asignaturas');
+		}
 	}
 }

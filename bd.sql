@@ -36,6 +36,31 @@ CREATE TABLE IF NOT EXISTS 'Asignaturas' (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table 'Roles'
+--
+
+CREATE TABLE IF NOT EXISTS 'Roles' (
+  'id_rol' int(11) NOT NULL AUTO_INCREMENT,
+  'Rol' varchar(50) DEFAULT NULL,
+  PRIMARY KEY ('id_rol')
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+-- --------------------------------------------------------
+
+--
+-- Inserts de los roles por defecto 
+-- 
+
+INSERT INTO Roles VALUES ('Administrador');
+INSERT INTO Roles VALUES('Director');
+INSERT INTO Roles VALUES ('Profesor');
+INSERT INTO Roles VALUES ('Alumno');
+
+-- --------------------------------------------------------
+
+
+--
 -- Table structure for table 'Foro'
 --
 
@@ -148,7 +173,7 @@ CREATE TABLE IF NOT EXISTS 'Usuarios' (
   'Nombre' varchar(25) NOT NULL,
   'Apellidos' varchar(80) NOT NULL,
   'Email' varchar(100) NOT NULL,
-  'Rol' enum('Administrador','Director','Profesor','Alumno'),
+  'id_rol' int(11) NOT NULL,
   'FechaNacimiento' date NOT NULL,
   'Contraseña' varchar(20) NOT NULL,
   PRIMARY KEY ('id_usuario')
