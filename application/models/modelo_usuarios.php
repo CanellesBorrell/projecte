@@ -19,8 +19,8 @@ class modelo_usuarios extends CI_Model{
     
     function login($username, $password) {
         $this -> db -> select('id_usuario');
-        $this -> db -> from('usuarios');
-        $this -> db -> where('email', $email);
+        $this -> db -> from('Usuarios');
+        $this -> db -> where('Email', $email);
         $this -> db -> where('Contraseña', MD5($password));
         $this -> db -> limit(1);
         $query = $this -> db -> get();
@@ -35,13 +35,13 @@ class modelo_usuarios extends CI_Model{
 
     function insertarUsuario($usuario, $nombre, $apellidos, $Email, $rol, $password) {
         $data = array(
-			'usuario'=> $usuario,
+			'Usuario'=> $usuario,
 			'Nombre'=> $nombre,
 			'Apellidos'=> $apellidos,
 			'Email'=> $Email,
 			'Rol'=> $rol,
 			'Contraseña'=> $password,
-			$this->db->insert('Clients', $data);
+			$this->db->insert('Usuarios', $data);
     }
 
     function modificarUsuario() {

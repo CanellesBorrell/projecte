@@ -14,8 +14,11 @@ class modelo_asignaturas extends CI_Model{
         return $query->result_array();
     }
 
-    function insertarAsignatura() {
-
+    function insertarAsignatura($asignatura, $profesorasig) {
+        $data = array(
+            'Asignatura'=> $asignatura,
+            'Profesor_asignado'=> $profesorasig
+            $this->db->insert('Asignaturas', $data);
     }
 
     function modificarAsignatura() {

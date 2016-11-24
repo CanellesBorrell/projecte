@@ -13,8 +13,14 @@ class modelo_tareas extends CI_Model{
         return $query->result_array();
     }
 
-    function insertarTarea() {
-
+    function insertarTarea($nombre, $archivo, $datavencimiento, $profesorassig, $comentario) {
+         $data = array(
+            'Nombre'=> $nombre,
+            'Archivo'=> $archivo,
+            'Data_vencimiento'=> $datavencimiento,
+            'Profesor_asignado'=> $profesorassig,
+            'Comentario'=> $comentario
+            $this->db->insert('Tareas', $data);
     }
 
     function modificarTarea() {
