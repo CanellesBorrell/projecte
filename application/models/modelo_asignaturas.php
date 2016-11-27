@@ -18,14 +18,14 @@ class modelo_asignaturas extends CI_Model{
         $data = array(
             'Asignatura'=> $asignatura,
             'Profesor_asignado'=> $profesorasig
-            $this->db->insert('Asignaturas', $data);
+            $this->db->insert('Asignaturas', $data));
     }
 
     function modificarAsignatura() {
 
     }
 
-    function eliminarAsignatura() {
-    	
+    function eliminarAsignatura($id) {
+    	$this->db->delete('Asignaturas', array('id_asignatura' => $id));
     }
 }

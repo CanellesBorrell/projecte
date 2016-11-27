@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS 'Foros' (
 CREATE TABLE IF NOT EXISTS 'Grupos' (
   'id_grupo' int(11) NOT NULL AUTO_INCREMENT,
   'Grupo' varchar(50) NOT NULL,
-  'Profesor_asignado' int(11) NOT NULL,
+  'Profesor asignado' int(11) NOT NULL,
   PRIMARY KEY ('id_grupo')
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 

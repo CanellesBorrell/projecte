@@ -18,14 +18,14 @@ class modelo_grupos extends CI_Model{
         $data = array(
             'Grupo'=> $grupo,
             'Profesor_asignado'=> $profesorasig
-            $this->db->insert('Grupos', $data);
+            $this->db->insert('Grupos', $data));
     }
 
     function modificarGrupo() {
 
     }
 
-    function eliminarGrupo() {
-
+    function eliminarGrupo($id) {
+        $this->db->delete('Grupos', array('id_grupo' => $id));
     }
 }

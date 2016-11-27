@@ -1,8 +1,7 @@
 
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class modelo_foros extends CI_Model{
-    function __construct()
-    {
+    function __construct() {
         parent::__construct();
         $this->load->database();
         
@@ -14,15 +13,20 @@ class modelo_foros extends CI_Model{
         return $query->result_array();
     }
 
-    function insertarForo() {
-
+    function insertarForo(/*$id_usuario*/,$nombre,$diahora,$descripcion) {
+        $data = array(
+            //'id_usuario'=> $id_usuario,
+            'Nombre'=> $nombre,
+            'DiaHora'=> $diahora,
+            'Descripcion'=> $descripcion
+            $this->db->insert('Foros', $data));
     }
 
     function modificarForo() {
 
     }
 
-    function eliminarForo() {
-    	
+    function eliminarForo($id) {
+    	$this->db->delete('Foros', array('id_foro' => $id));
     }
 }

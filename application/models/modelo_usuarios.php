@@ -40,15 +40,15 @@ class modelo_usuarios extends CI_Model{
 			'Apellidos'=> $apellidos,
 			'Email'=> $Email,
 			'Rol'=> $rol,
-			'Contraseña'=> $password,
-			$this->db->insert('Usuarios', $data);
+			'Contraseña'=> MD5($password),
+			$this->db->insert('Usuarios', $data));
     }
 
     function modificarUsuario() {
 
     }
 
-    function eliminarUsuario() {
-    	
+    function eliminarUsuario($id) {
+        $this->db->delete('Usuarios', array('id_usuario' => $id));	
     }
 }

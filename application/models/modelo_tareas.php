@@ -20,14 +20,14 @@ class modelo_tareas extends CI_Model{
             'Data_vencimiento'=> $datavencimiento,
             'Profesor_asignado'=> $profesorassig,
             'Comentario'=> $comentario
-            $this->db->insert('Tareas', $data);
+            $this->db->insert('Tareas', $data));
     }
 
     function modificarTarea() {
 
     }
 
-    function eliminarTarea() {
-  
+    function eliminarTarea($id) {
+        $this->db->delete('Tareas', array('id_tarea' => $id));
     }
 }
