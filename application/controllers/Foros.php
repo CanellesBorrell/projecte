@@ -37,4 +37,9 @@ class Foros extends CI_Controller {
 			redirect('Foros/foros');
 		}
 	}
+
+	public function eliminarForos($id) {
+		$this->modelo_foros->eliminarForo($id);
+		redirect('Foros/foros');
+	}
 }

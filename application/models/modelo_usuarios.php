@@ -9,7 +9,7 @@ class modelo_usuarios extends CI_Model{
         //$this->id = $this->sesio['id'];
         
     }
-   	function getUsuario($idusuario) {
+   	function getUsuario($id_usuario) {
    		$this->db->select('id_usuario,Nombre,Apellidos,Email,Rol,FechaNacimiento');
         $this->db->from('Usuarios');
         $this->db->where('id_usuario',$idusuario);
@@ -17,7 +17,7 @@ class modelo_usuarios extends CI_Model{
         return $query->result_array();
     }
     
-    function login($username, $password) {
+    function login($email, $password) {
         $this -> db -> select('id_usuario');
         $this -> db -> from('Usuarios');
         $this -> db -> where('Email', $email);
@@ -27,19 +27,18 @@ class modelo_usuarios extends CI_Model{
         if($query -> num_rows() == 1) {
             return $query->result(); 
         }
-        else
-        {
+        else {
             return false;
         }
     }
 
-    function insertarUsuario($usuario, $nombre, $apellidos, $Email, $rol, $password) {
+    function insertarUsuario($nombre, $apellidos, $email, $rol, $fechanacimiento, $password) {
         $data = array(
-			'Usuario'=> $usuario,
 			'Nombre'=> $nombre,
 			'Apellidos'=> $apellidos,
-			'Email'=> $Email,
+			'Email'=> $email,
 			'Rol'=> $rol,
+            'FechaNacimiento'=> $fechanacimiento,
 			'Contraseña'=> MD5($password),
 			$this->db->insert('Usuarios', $data));
     }

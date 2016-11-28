@@ -42,6 +42,11 @@ class Tareas extends CI_Controller {
 		}
 	}
 
+	public function eliminarTareas($id) {
+		$this->modelo_tareas->eliminarTarea($id);
+		redirect('Tareas/tareas');
+	}
+
 // Futuro codigo de insertar tarea xD cuidado con el puto upload tenemos que comprovar si tenemos una version mejor.
 	/*	public function upload() {
 		$data['content'] = 'Tareas';
