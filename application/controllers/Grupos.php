@@ -33,4 +33,9 @@ class Grupos extends CI_Controller {
 			redirect('Grupos/grupos');
 		}
 	}
+
+	public function eliminarGrupos($id) {
+		$this->modelo_grupos->eliminarGrupo($id);
+		redirect('Grupos/grupos');
+	}
 }

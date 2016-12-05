@@ -22,7 +22,7 @@ class Asignaturas extends CI_Controller {
 	}
 
 	// Funcion utilizada para comprovar desde el servidor que los datos estan correctos y pasarlos al modelo para que los inserte en la base de datos.
-	public function insertarAssignaturas() {
+	public function insertarAsignaturas() {
 		$this->form_validation->set_rules('Asignatura', 'Asignatura', 'required|xss_clean');
 		$this->form_validation->set_rules('Profesor_asignado', 'Profesor_asignado', 'required|xss_clean');
 		$this->form_validation->set_message('required', 'El campo %s es obligado');
@@ -37,5 +37,10 @@ class Asignaturas extends CI_Controller {
 			$this->modelo_asignaturas->insertarAssignatura($asignatura, $profeasignado);
 			redirect('Asignatura/asignaturas');
 		}
+	}
+
+	public function eliminarAsignaturas($id) {
+		$this->modelo_asignaturas->eliminarAsignatura($id);
+		redirect('Asignaturas/asignaturas');
 	}
 }
