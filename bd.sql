@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS 'Asignaturas' (
   'id_asignatura' int(11) NOT NULL AUTO_INCREMENT,
   'Asignatura' varchar(50) DEFAULT NULL,
+  'Contraseña' varchar(50) NOT NULL,
   'Profesor_asignado' int(11) DEFAULT NULL,
   PRIMARY KEY ('id_asignatura')
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -176,6 +177,7 @@ CREATE TABLE IF NOT EXISTS 'Usuarios' (
   'id_rol' int(11) NOT NULL,
   'FechaNacimiento' date NOT NULL,
   'Contraseña' varchar(20) NOT NULL,
+  'Primeravez' boolean,
   PRIMARY KEY ('id_usuario')
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
