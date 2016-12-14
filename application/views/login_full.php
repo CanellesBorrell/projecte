@@ -14,40 +14,40 @@
 
         <!-- Icons -->
         <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-        <link rel="shortcut icon" href="img/favicon.png">
-        <link rel="apple-touch-icon" href="img/icon57.png" sizes="57x57">
-        <link rel="apple-touch-icon" href="img/icon72.png" sizes="72x72">
-        <link rel="apple-touch-icon" href="img/icon76.png" sizes="76x76">
-        <link rel="apple-touch-icon" href="img/icon114.png" sizes="114x114">
-        <link rel="apple-touch-icon" href="img/icon120.png" sizes="120x120">
-        <link rel="apple-touch-icon" href="img/icon144.png" sizes="144x144">
-        <link rel="apple-touch-icon" href="img/icon152.png" sizes="152x152">
-        <link rel="apple-touch-icon" href="img/icon180.png" sizes="180x180">
+        <link rel="shortcut icon" href="<?php echo base_url();?>assets/img/favicon.png">
+        <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/img/icon57.png" sizes="57x57">
+        <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/img/icon72.png" sizes="72x72">
+        <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/img/icon76.png" sizes="76x76">
+        <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/img/icon114.png" sizes="114x114">
+        <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/img/icon120.png" sizes="120x120">
+        <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/img/icon144.png" sizes="144x144">
+        <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/img/icon152.png" sizes="152x152">
+        <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/img/icon180.png" sizes="180x180">
         <!-- END Icons -->
 
         <!-- Stylesheets -->
         <!-- Bootstrap is included in its original form, unaltered -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
 
         <!-- Related styles of various icon packs and plugins -->
-        <link rel="stylesheet" href="css/plugins.css">
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/css/plugins.css">
 
         <!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/css/main.css">
 
         <!-- Include a specific file here from css/themes/ folder to alter the default theme of the template -->
 
         <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
-        <link rel="stylesheet" href="css/themes/lake.css">
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/css/themes/lake.css">
         <!-- END Stylesheets -->
 
         <!-- Modernizr (browser feature detection library) -->
-        <script src="js/vendor/modernizr.min.js"></script>
+        <script src="<?php echo base_url();?>assets/js/vendor/modernizr.min.js"></script>
     </head>
     <body>
         <!-- Login Full Background -->
         <!-- For best results use an image with a resolution of 1280x1280 pixels (prefer a blurred image for smaller file size) -->
-        <img src="img/placeholders/backgrounds/login_full_bg.jpg" alt="Login Full Background" class="full-bg animation-pulseSlow">
+        <img src="<?php echo base_url();?>assets/img/placeholders/backgrounds/login_full_bg.jpg" alt="Login Full Background" class="full-bg animation-pulseSlow">
         <!-- END Login Full Background -->
 
         <!-- Login Container -->
@@ -68,7 +68,7 @@
                         <div class="col-xs-12">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
-                                <input type="text" id="username" name="username" class="form-control input-lg" placeholder="Email">
+                                <input type="text" id="email" name="email" class="form-control input-lg" placeholder="Email">
                             </div>
                         </div>
                     </div>
@@ -88,13 +88,12 @@
                             </label>
                         </div>
                         <div class="col-xs-8 text-right">
-                            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Login to Dashboard</button>
+                            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Entrar</button>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-xs-12 text-center">
-                            <a href="javascript:void(0)" id="link-reminder-login"><small>Forgot password?</small></a> -
-                            <a href="javascript:void(0)" id="link-register-login"><small>Create a new account</small></a>
+                            <a href="javascript:void(0)" id="link-reminder-login"><small>Olvidaste la contraseña?</small></a> -
                         </div>
                     </div>
                 </form>
@@ -209,13 +208,13 @@
         <!-- END Modal Terms -->
 
         <!-- jQuery, Bootstrap.js, jQuery plugins and Custom JS code -->
-        <script src="js/vendor/jquery.min.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/app.js"></script>
+        <script src="<?php echo base_url();?>assets/js/vendor/jquery.min.js"></script>
+        <script src="<?php echo base_url();?>assets/js/vendor/bootstrap.min.js"></script>
+        <script src="<?php echo base_url();?>assets/js/plugins.js"></script>
+        <script src="<?php echo base_url();?>assets/js/app.js"></script>
 
         <!-- Load and execute javascript code used only in this page -->
-        <script src="js/pages/login.js"></script>
+        <script src="<?php echo base_url();?>assets/js/pages/login.js"></script>
         <script>$(function(){ Login.init(); });</script>
     </body>
 </html>

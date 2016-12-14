@@ -4,7 +4,9 @@ class Login extends CI_Controller {
       
       parent::__construct();
       $this->load->database();   // Carreguem la base de dades
+      $this->load->helper('url');
       $this->load->model('Modelo_usuarios');
+      $this->load->library('session');
     } 
 
 	
@@ -18,31 +20,30 @@ class Login extends CI_Controller {
 		}
 		else { // si ha anat be
 			//anirem a l'area privada
-			redirect('../', 'refresh');
+			redirect('/asdasdindex', 'refresh');
 		}
 	}
 	
 	function check_database($password) {
 		//Aqui mirarem si ha posat be la password i per tant si es correcte o no el login
 		$email = $this->input->post('email');
-
 		//fem la query on modelo_usuarios es el model i login le funcio
 		$result = $this->Modelo_usuarios->login($email, $password); 
-
 	   if($result){ // si ha anat be
 			$sess_array = array(); // guardarem a la variable de sessio totes les dades
 			
 			foreach($result as $row) { //per a fer-ho anem omplintla
 				$sess_array = array(
-				'id' => $row->id, //id del usuari
+				'id_usuario' => $row->id_usuario, //id del usuari
 				'Nombre' => $row->Nombre, //Nom de l'usuari
 				'Apellidos' => $row->Apellidos, //Cognom de l'usuari
 				'id_rol' => $row->id_rol, //rol de l'usuari
-				'email' => $row->email, //email del usuari
+				'Email' => $row->Email, //email del usuari
 				'id_escuela' => $row->id_escuela // id de la escola
 				);
 			$this->session->set_userdata('logged_in', $sess_array); // i de paso marquem com a que esta loguejat
 			}
+			redirect('../', 'refresh');
 		return TRUE;
 		}
 		

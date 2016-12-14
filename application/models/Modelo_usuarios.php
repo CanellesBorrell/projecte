@@ -19,9 +19,14 @@ class Modelo_usuarios extends CI_Model{
     
     function login($email, $password) {
         $this -> db -> select('id_usuario');
+        $this -> db -> select('Nombre');
+        $this -> db -> select('Apellidos');
+        $this -> db -> select('id_rol');
+        $this -> db -> select('Email');
+        $this -> db -> select('id_escuela');
         $this -> db -> from('Usuarios');
         $this -> db -> where('Email', $email);
-        $this -> db -> where('Contraseña', MD5($password));
+        $this -> db -> where('Contraseña', $password); //falta tornar a ficar lo MD5 davant!!!!! IMP
         $this -> db -> limit(1);
         $query = $this -> db -> get();
         if($query -> num_rows() == 1) {
