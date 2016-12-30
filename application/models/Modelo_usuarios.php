@@ -13,7 +13,7 @@ class Modelo_usuarios extends CI_Model{
    		$this->db->select('id_usuario,Nombre,Apellidos,Email,id_rol,FechaNacimiento');
         $this->db->from('Usuarios');
         $this->db->where('id_usuario',$idusuario);
-        $query = $this->db->get('Usuarios');
+        $query = $this->db->get();
         return $query->result_array();
     }
 
@@ -36,7 +36,7 @@ class Modelo_usuarios extends CI_Model{
         $this -> db -> select('id_escuela');
         $this -> db -> from('Usuarios');
         $this -> db -> where('Email', $email);
-        $this -> db -> where('Contraseña', $password); //falta tornar a ficar lo MD5 davant!!!!! IMP
+        $this -> db -> where('Contraseña', MD5($password)); //falta tornar a ficar lo MD5 davant!!!!! IMP
         $this -> db -> limit(1);
         $query = $this -> db -> get();
         if($query -> num_rows() == 1) {
@@ -48,16 +48,29 @@ class Modelo_usuarios extends CI_Model{
     }
 
     function insertarUsuario($nombre, $apellidos, $email, $rol, $fechanacimiento, $password) {
-        $data = array(
-			'Nombre'=> $nombre,
-			'Apellidos'=> $apellidos,
-			'Email'=> $email,
-			'Rol'=> $rol,
-            'FechaNacimiento'=> $fechanacimiento,
-			'Contraseña'=> MD5($password),
-			);
-        $this->db->insert('Usuarios', $data);
-    }
+        		
+			$this->db->select('Email');
+			$this->db->from('Usuarios');
+			$this->db->where('Email', $email);
+			$resultat = $this->db->get();
+			var_dump ($resultat->num_rows());
+			if ($resultat->num_rows()==0){
+				$data = array(
+					'Nombre'=> $nombre,
+					'Apellidos'=> $apellidos,
+					'Email'=> $email,
+					'id_rol'=> $rol,
+					'FechaNacimiento'=> $fechanacimiento,
+					'Contraseña'=> MD5($password));
+				$this->db->insert('Usuarios', $data);
+				return true;
+			}
+			else{
+				return false;
+			}
+	}
+				
+    
 
     function modificarUsuario() {
 

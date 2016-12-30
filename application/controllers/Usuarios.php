@@ -6,6 +6,7 @@ class Usuarios extends CI_Controller {
       $this->load->database();   // Carreguem la base de dades
       $this->load->library('form_validation');  // La llibreria per fer els camps requerits
       $this->load->model('modelo_usuarios');
+      $this->load->helper('form');
       
     } 
 
@@ -36,18 +37,28 @@ class Usuarios extends CI_Controller {
 			//aqui mirare si el loguejat es admin o director
 		//if($this->session->userdata('admin o director (codi inventat)') //si es admin o director 
 		//{
+			
+			
+			
 			//podra fer els inserts
-			$this->form_validation->set_rules('Nombre', 'Nombre', 'required|xss_clean');
-			$this->form_validation->set_rules('Apellido', 'Apellido', 'required|xss_clean');
-			$this->form_validation->set_rules('Email', 'Email', 'required|xss_clean');
-			$this->form_validation->set_rules('Rol', 'Rol', 'required|xss_clean');
-			$this->form_validation->set_rules('Fecha', 'Fecha', 'required|xss_clean');
-			$this->form_validation->set_rules('Contraseña', 'Contraseña', 'required|xss_clean');
+			
+			$this->form_validation->set_rules('Nombre', 'Nombre', 'required');
+			$this->form_validation->set_rules('Apellido', 'Apellido', 'required');
+			$this->form_validation->set_rules('Email', 'Email', 'required');
+			$this->form_validation->set_rules('Rol', 'Rol', 'required');
+			$this->form_validation->set_rules('Fecha', 'Fecha', 'required');
+			$this->form_validation->set_rules('Contraseña', 'Contraseña', 'required');
 			$this->form_validation->set_message('required', 'El campo %s es obligado');
 	
 			if($this->form_validation->run() == FALSE) {
-				$data = $this->modelo_usuarios->getUsuario();
-				$this->load->view('usuarios', $data);
+				
+				$data = null;
+				$sesio = $this->session->userdata('logged_in');
+				$dades = array(
+						'sesio' => $sesio,
+						'data' => $data);
+				
+				$this->load->view('insertarUsuarios', $dades);
 			}
 			else {
 				$nombre = $this->input->post('Nombre');
@@ -56,8 +67,12 @@ class Usuarios extends CI_Controller {
 				$rol = $this->input->post('Rol');
 				$fechanacimiento = $this->input->post('Fecha');
 				$contraseña = $this->input->post('Contraseña');
-				$this->modelo_usuarios->insertarUsuarios($nombre, $apellido, $email,$rol ,$fechanacimiento, $contraseña);
-				redirect('Usuarios/usuarios');
+				IF ($this->modelo_usuarios->insertarUsuario($nombre, $apellido, $email,$rol ,$fechanacimiento, $contraseña) == true){
+					
+					redirect('usuarios');
+				}
+				else{
+					redirect('login');}
 			}
 		 }
 

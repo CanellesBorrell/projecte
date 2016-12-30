@@ -22,7 +22,7 @@
                                     <a href="page_ready_inbox.html" data-toggle="tooltip" data-placement="bottom" title="Messages"><i class="gi gi-envelope"></i></a>
                                     <!-- Opens the user settings modal that can be found at the bottom of each page (page_footer.html in PHP version) -->
                                     <a href="javascript:void(0)" class="enable-tooltip" data-placement="bottom" title="Settings" onclick="$('#modal-user-settings').modal('show');"><i class="gi gi-cogwheel"></i></a>
-                                    <a href="login.html" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="gi gi-exit"></i></a>
+                                    <a href="<?php echo base_url();?>index.php/logout" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="gi gi-exit"></i></a>
                                 </div>
                             </div>
                             <ul class="sidebar-nav">
@@ -35,19 +35,19 @@
                                     <span class="sidebar-header-title">Gestión de usuarios</span>
                                 </li>
                                 <li>
-                                    <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Insertar usuarios</span></a>
+                                    <a href="<?php echo base_url();?>index.php/usuarios/insertarUsuarios"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Insertar usuarios</span></a>
                                 </li>
                                 <li>
-                                    <a href="page_widgets_social.html"><i class="gi gi-share_alt sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Listado de usuarios</span></a>
+                                    <a href="<?php echo base_url();?>index.php/usuarios"><i class="gi gi-share_alt sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Listado de usuarios</span></a>
                                 </li>
                                 <li class="sidebar-header">
                                     <span class="sidebar-header-title">Escuela</span>
                                 </li>
                                  <li>
-                                    <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Grupos</span></a>
+                                    <a href="<?php echo base_url();?>index.php/grupos"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Grupos</span></a>
                                 </li>
                                 <li>
-                                    <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Asignaturas</span></a>
+                                    <a href="<?php echo base_url();?>index.php/Asignaturas"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Asignaturas</span></a>
                                 </li>
                                 <li>
                                     <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Tareas</span></a>
