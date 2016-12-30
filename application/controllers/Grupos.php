@@ -6,14 +6,25 @@ class Grupos extends CI_Controller {
       $this->load->database();   // Carreguem la base de dades
       $this->load->library('form_validation');  // La llibreria per fer els camps requerits
       $this->load->model('modelo_grupos');
+      $sesio = $this->session->userdata('logged_in');
     } 
    	public function index() {
-   		$data = $this->modelo_grupos->getGrupo();
-		if($data == null) {
-			$this->load->view('grupos');	
-		}
-		else {
-			$this->load->view('grupos', $data);
+   		if($this->session->userdata('logged_in')){
+			$sesio = $this->session->userdata('logged_in');
+			$data = $this->modelo_grupos->getGrupo();
+			$dades = array(
+						'sesio' => $sesio,
+						'data' => $data);
+				if($data == null) {
+					$this->load->view('grupos', $dades);	
+				}
+				else {
+					$this->load->view('grupos', $dades);
+				}
+			}
+			
+		else{
+			redirect('login', 'refresh');
 		}
 	}
 

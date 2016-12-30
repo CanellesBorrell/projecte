@@ -5,8 +5,6 @@ class Principal extends CI_Controller {
 	
 	function __construct() {
       parent::__construct();
-      $this->load->helper('url');
-      $this->load->library('session');
       $sesio = $this->session->userdata('logged_in');
     } 
 
@@ -27,9 +25,22 @@ class Principal extends CI_Controller {
 	 */
 	public function index()
 	{
+
+
 		if($this->session->userdata('logged_in')){
 			$sesio = $this->session->userdata('logged_in');
-			$this->load->view('index', $sesio);}
+			$data = null;//$this->modelo_grupos->getGrupo();
+				/*if($data == null) {
+					$this->load->view('grupos', $sesio);	
+				}*/
+		//else {
+					$dades = array(
+						'sesio' => $sesio,
+						'data' => $data);
+					$this->load->view('index', $dades);
+				//}
+			}
+			
 		else{
 			redirect('login', 'refresh');
 		}

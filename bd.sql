@@ -28,12 +28,21 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS Asignaturas (
   id_asignatura int(11) NOT NULL AUTO_INCREMENT,
-  Asignatura varchar(50) DEFAULT NULL,
-  Contraseña varchar(50) NOT NULL,
+  Asignatura varchar(50) NOT NULL,
+  Contraseña varchar(50) DEFAULT NULL,
   Profesor_asignado int(11) DEFAULT NULL,
   id_escuela int (11) NOT NULL,
   PRIMARY KEY (id_asignatura)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+--
+-- Inserts de las asignaturas
+-- 
+
+INSERT INTO Asignaturas (Asignatura) VALUES ('Xarxes');
+INSERT INTO Asignaturas (Asignatura) VALUES ('Base de Dades');
+INSERT INTO Asignaturas (Asignatura) VALUES ('Jordi Varas');
 
 -- --------------------------------------------------------
 
@@ -91,12 +100,64 @@ CREATE TABLE IF NOT EXISTS Foros (
 CREATE TABLE IF NOT EXISTS Grupos (
   id_grupo int(11) NOT NULL AUTO_INCREMENT,
   Grupo varchar(50) NOT NULL,
-  Profesor_asignado int(11) NOT NULL,
-  id_escuela int (11) NOT NULL,
+  Profesor_asignado int(11),
+  id_escuela int (11),
   PRIMARY KEY (id_grupo)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
+
+
+-- --------------------------------------------------------
+--
+-- Inserts de Grupos
+--
+
+INSERT INTO Grupos(Grupo) VALUES ('1º Profesional A');
+INSERT INTO Grupos(Grupo) VALUES ('1º Profesional B');
+INSERT INTO Grupos(Grupo) VALUES ('2º Profesional A');
+INSERT INTO Grupos(Grupo) VALUES ('2º Profesional B');
+INSERT INTO Grupos(Grupo) VALUES ('5º Profesional');
+INSERT INTO Grupos(Grupo) VALUES ('6º Profesional');
+INSERT INTO Grupos(Grupo) VALUES ('Arpas');
+INSERT INTO Grupos(Grupo) VALUES ('Baritonos');
+INSERT INTO Grupos(Grupo) VALUES ('Betera Arpas');
+INSERT INTO Grupos(Grupo) VALUES ('Betera Cellos');
+INSERT INTO Grupos(Grupo) VALUES ('Betera Clarinetes');
+INSERT INTO Grupos(Grupo) VALUES ('Betera Maracas');
+INSERT INTO Grupos(Grupo) VALUES ('Betera Trompas');
+INSERT INTO Grupos(Grupo) VALUES ('Betera Tubas');
+INSERT INTO Grupos(Grupo) VALUES ('Betera Violines');
+INSERT INTO Grupos(Grupo) VALUES ('Cellos');
+INSERT INTO Grupos(Grupo) VALUES ('Contraltos m');
+INSERT INTO Grupos(Grupo) VALUES ('Darbukas');
+INSERT INTO Grupos(Grupo) VALUES ('Djembés');
+INSERT INTO Grupos(Grupo) VALUES ('Elemental Onda');
+INSERT INTO Grupos(Grupo) VALUES ('Fagots');
+INSERT INTO Grupos(Grupo) VALUES ('Flautines v');
+INSERT INTO Grupos(Grupo) VALUES ('Maracas');
+INSERT INTO Grupos(Grupo) VALUES ('Marimbas');
+INSERT INTO Grupos(Grupo) VALUES ('Onda Adultos');
+INSERT INTO Grupos(Grupo) VALUES ('Onda Lenguaje musical, armonía y análisis');
+INSERT INTO Grupos(Grupo) VALUES ('Onda pre-elemental');
+INSERT INTO Grupos(Grupo) VALUES ('Pianos');
+INSERT INTO Grupos(Grupo) VALUES ('Pianos 2º Profesional');
+INSERT INTO Grupos(Grupo) VALUES ('Requintos');
+INSERT INTO Grupos(Grupo) VALUES ('Saxos');
+INSERT INTO Grupos(Grupo) VALUES ('Sopranos');
+INSERT INTO Grupos(Grupo) VALUES ('Tenores');
+INSERT INTO Grupos(Grupo) VALUES ('Timbales');
+INSERT INTO Grupos(Grupo) VALUES ('Trombones');
+INSERT INTO Grupos(Grupo) VALUES ('Trompas');
+INSERT INTO Grupos(Grupo) VALUES ('Tubas');
+INSERT INTO Grupos(Grupo) VALUES ('Violas');
+INSERT INTO Grupos(Grupo) VALUES ('Violines');
+INSERT INTO Grupos(Grupo) VALUES ('Wiros');
+
+--
+--
+--
+
 
 --
 -- Table structure for table Grupos_Asignaturas
@@ -191,6 +252,12 @@ CREATE TABLE IF NOT EXISTS Usuarios (
   PRIMARY KEY (id_usuario)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+
+--
+-- Insert de usuario
+--
+
+INSERT INTO Usuarios(Nombre, Apellidos, Email, id_rol, FechaNacimiento, Contraseña) VALUES ('Albert','Cañelles','bomberocanelles@gmail.com','1','19/03/1993','1234');
 -- --------------------------------------------------------
 
 --

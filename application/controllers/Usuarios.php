@@ -6,29 +6,36 @@ class Usuarios extends CI_Controller {
       $this->load->database();   // Carreguem la base de dades
       $this->load->library('form_validation');  // La llibreria per fer els camps requerits
       $this->load->model('modelo_usuarios');
-      $this->sesio = $this->session->userdata('logged_in');
+      
     } 
 
 	
     public function index() {
-		if($this->session->userdata('logged_in')){//dins d'este if anira tot
-			//aqui mirare si el loguejat es admin o director
-			//tot aixo s'ha de canviar
-			$data = $this->modelo_usuarios->getUsuario();
+
+		if($this->session->userdata('logged_in')){
+			$sesio = $this->session->userdata('logged_in');
+			$data = $this->modelo_usuarios->getUsuarios();
+			$dades = array(
+						'sesio' => $sesio,
+						'data' => $data);
 				if($data == null) {
-					$this->load->view('usuarios');	}
+					$this->load->view('usuarios', $dades);	
+				}
 				else {
-					$this->load->view('usuarios', $data);
-					}
-		} 
+					$this->load->view('usuarios', $dades);
+				}
+		}
+		else{
+			redirect('login', 'refresh');
+		}
     	
 	}
 
 	public function insertarUsuarios() {
 		if($this->session->userdata('logged_in')){
 			//aqui mirare si el loguejat es admin o director
-		if($this->session->userdata('admin o director (codi inventat)') //si es admin o director 
-		{
+		//if($this->session->userdata('admin o director (codi inventat)') //si es admin o director 
+		//{
 			//podra fer els inserts
 			$this->form_validation->set_rules('Nombre', 'Nombre', 'required|xss_clean');
 			$this->form_validation->set_rules('Apellido', 'Apellido', 'required|xss_clean');
@@ -52,7 +59,8 @@ class Usuarios extends CI_Controller {
 				$this->modelo_usuarios->insertarUsuarios($nombre, $apellido, $email,$rol ,$fechanacimiento, $contraseña);
 				redirect('Usuarios/usuarios');
 			}
-		 }		
+		 }
+
 	}
 
 	public function eliminarUsuarios($id) {

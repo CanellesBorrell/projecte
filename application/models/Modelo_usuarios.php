@@ -10,12 +10,22 @@ class Modelo_usuarios extends CI_Model{
         
     }
    	function getUsuario($id_usuario) {
-   		$this->db->select('id_usuario,Nombre,Apellidos,Email,Rol,FechaNacimiento');
+   		$this->db->select('id_usuario,Nombre,Apellidos,Email,id_rol,FechaNacimiento');
         $this->db->from('Usuarios');
         $this->db->where('id_usuario',$idusuario);
         $query = $this->db->get('Usuarios');
         return $query->result_array();
     }
+
+    function getUsuarios() {
+        $this->db->select('id_usuario,Nombre,Apellidos,Email,Usuarios.id_rol,FechaNacimiento');
+        $this -> db -> from('Usuarios');
+        $this -> db -> join('Roles', 'Roles.id_rol = Usuarios.id_rol');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+
     
     function login($email, $password) {
         $this -> db -> select('id_usuario');
@@ -45,7 +55,8 @@ class Modelo_usuarios extends CI_Model{
 			'Rol'=> $rol,
             'FechaNacimiento'=> $fechanacimiento,
 			'Contraseña'=> MD5($password),
-			$this->db->insert('Usuarios', $data));
+			);
+        $this->db->insert('Usuarios', $data);
     }
 
     function modificarUsuario() {

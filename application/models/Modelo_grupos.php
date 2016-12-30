@@ -1,6 +1,6 @@
 
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class modelo_grupos extends CI_Model{
+class Modelo_grupos extends CI_Model{
     function __construct()
     {
         parent::__construct();
@@ -17,8 +17,8 @@ class modelo_grupos extends CI_Model{
     function insertarGrupo($grupo, $profesorasig) {
         $data = array(
             'Grupo'=> $grupo,
-            'Profesor_asignado'=> $profesorasig
-            $this->db->insert('Grupos', $data));
+            'Profesor_asignado'=> $profesorasig);
+        $this->db->insert('Grupos', $data);
     }
 
     function modificarGrupo() {

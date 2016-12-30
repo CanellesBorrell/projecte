@@ -11,13 +11,23 @@ class Asignaturas extends CI_Controller {
     // Cargamos la pagina con los datos recibidos de la base de datos
 
     public function index() {
+		if($this->session->userdata('logged_in')){
+			$sesio = $this->session->userdata('logged_in');
+			$data = $this->modelo_asignaturas->getAsignatura();
+			$dades = array(
+				'sesio' => $sesio,
+				'data' => $data);
+				if($data == null) {
+					$this->load->view('asignaturas', $dades);	
+				}
+				else {
 
-    	$data = $this->modelo_asignaturas->getAsignatura();
-		if($data == null) {
-			$this->load->view('asignaturas');	
-		}
-		else {
-			$this->load->view('asignaturas', $data);
+					$this->load->view('asignaturas', $dades);
+				}
+			}
+			
+		else{
+			redirect('login', 'refresh');
 		}
 	}
 
