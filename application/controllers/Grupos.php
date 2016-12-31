@@ -28,6 +28,26 @@ class Grupos extends CI_Controller {
 		}
 	}
 
+	public function index_front() {
+   		if($this->session->userdata('logged_in')){
+			$sesio = $this->session->userdata('logged_in');
+			$data = $this->modelo_grupos->getGrupo();
+			$dades = array(
+						'sesio' => $sesio,
+						'data' => $data);
+				if($data == null) {
+					$this->load->view('grupos_p', $dades);	
+				}
+				else {
+					$this->load->view('grupos_p', $dades);
+				}
+			}
+			
+		else{
+			redirect('login', 'refresh');
+		}
+	}
+
 	public function insertarGrupos() {
 		$this->form_validation->set_rules('Grupo', 'Grupo', 'required|xss_clean');
 		$this->form_validation->set_rules('Profesor_asignado', 'Profesor_asignado', 'required|xss_clean');

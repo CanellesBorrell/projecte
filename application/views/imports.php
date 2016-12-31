@@ -24,6 +24,7 @@
 
         <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
         <link rel="stylesheet" href="<?php echo base_url();?>assets/css/themes/lake.css">
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/css/themes.css">
         <!-- END Stylesheets -->
 
         <!-- Modernizr (browser feature detection library) -->

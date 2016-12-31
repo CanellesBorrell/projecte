@@ -44,20 +44,23 @@
                                     <span class="sidebar-header-title">Escuela</span>
                                 </li>
                                  <li>
-                                    <a href="<?php echo base_url();?>index.php/grupos"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Grupos</span></a>
+                                    <a href="<?php echo base_url();?>index.php/grupos"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Gestión de Grupos</span></a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url();?>index.php/Asignaturas"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Asignaturas</span></a>
+                                    <a href="<?php echo base_url();?>index.php/asignaturas"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Gestión de Asignaturas</span></a>
                                 </li>
                                 <li>
-                                    <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Tareas</span></a>
+                                    <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Gestión de Tareas</span></a>
+                                </li>
+                                 <li>
+                                    <a href="<?php echo base_url();?>index.php/grupos/index_front"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Grupos</span></a>
                                 </li>
                                 
                                 <li class="sidebar-header">
                                     <span class="sidebar-header-title">Comunicación</span>
                                 </li>
                                <li>
-                                    <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Foro</span></a>
+                                    <a href="<?php echo base_url();?>index.php/foros"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Foro</span></a>
                                 </li>
                                 <li>
                                     <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Mensajeria</span></a>
