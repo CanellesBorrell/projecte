@@ -72,8 +72,15 @@ class Modelo_usuarios extends CI_Model{
 				
     
 
-    function modificarUsuario() {
+    function modificarUsuario($id, $nombre, $apellidos, $email, $password) {
+            $data=array(
+                'Nombre'=> $nombre,
+                'Apellidos'=> $apellidos,
+                'Email'=> $email,
+                'Contraseña'=> $password);
 
+            $this->db->where('id_usuario', $id);
+            $this->db->update('Usuarios', $data);
     }
 
     function eliminarUsuario($id) {

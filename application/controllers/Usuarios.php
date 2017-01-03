@@ -79,7 +79,17 @@ class Usuarios extends CI_Controller {
 	}
 
 	public function eliminarUsuarios($id) {
+		
 		$this->modelo_usuarios->eliminarUsuario($id);
-		redirect('Usuarios/usuarios');
+		redirect('usuarios');
+	}
+
+	public function modificarUsuario($id) {
+		$nombre = $this->input->post('Nombre');
+		$apellido = $this->input->post('Apellido');
+		$email = $this->input->post('Email');
+		$password = $this->input->post('Password');
+		$this->modelo_usuarios->modificarUsuario($id);
+		redirect('usuarios');
 	}
 }

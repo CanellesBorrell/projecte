@@ -265,133 +265,7 @@
                         'navbar-fixed-bottom'       for a bottom fixed header (fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar()))
                             'header-fixed-bottom'   has to be added on #page-container only if the class 'navbar-fixed-bottom' was added
                     -->
-                    <header class="navbar navbar-default">
-                        <!-- Left Header Navigation -->
-                        <ul class="nav navbar-nav-custom">
-                            <!-- Main Sidebar Toggle Button -->
-                            <li>
-                                <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar');this.blur();">
-                                    <i class="fa fa-bars fa-fw"></i>
-                                </a>
-                            </li>
-                            <!-- END Main Sidebar Toggle Button -->
-
-                            <!-- Template Options -->
-                            <!-- Change Options functionality can be found in js/app.js - templateOptions() -->
-                            <li class="dropdown">
-                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="gi gi-settings"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-custom dropdown-options">
-                                    <li class="dropdown-header text-center">Header Style</li>
-                                    <li>
-                                        <div class="btn-group btn-group-justified btn-group-sm">
-                                            <a href="javascript:void(0)" class="btn btn-primary" id="options-header-default">Light</a>
-                                            <a href="javascript:void(0)" class="btn btn-primary" id="options-header-inverse">Dark</a>
-                                        </div>
-                                    </li>
-                                    <li class="dropdown-header text-center">Page Style</li>
-                                    <li>
-                                        <div class="btn-group btn-group-justified btn-group-sm">
-                                            <a href="javascript:void(0)" class="btn btn-primary" id="options-main-style">Default</a>
-                                            <a href="javascript:void(0)" class="btn btn-primary" id="options-main-style-alt">Alternative</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- END Template Options -->
-                        </ul>
-                        <!-- END Left Header Navigation -->
-
-                        <!-- Search Form -->
-                        <form action="page_ready_search_results.html" method="post" class="navbar-form-custom">
-                            <div class="form-group">
-                                <input type="text" id="top-search" name="top-search" class="form-control" placeholder="Search..">
-                            </div>
-                        </form>
-                        <!-- END Search Form -->
-
-                        <!-- Right Header Navigation -->
-                        <ul class="nav navbar-nav-custom pull-right">
-                            <!-- Alternative Sidebar Toggle Button -->
-                            <li>
-                                <!-- If you do not want the main sidebar to open when the alternative sidebar is closed, just remove the second parameter: App.sidebar('toggle-sidebar-alt'); -->
-                                <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar-alt', 'toggle-other');this.blur();">
-                                    <i class="gi gi-share_alt"></i>
-                                    <span class="label label-primary label-indicator animation-floating">4</span>
-                                </a>
-                            </li>
-                            <!-- END Alternative Sidebar Toggle Button -->
-
-                            <!-- User Dropdown -->
-                            <li class="dropdown">
-                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="img/placeholders/avatars/avatar2.jpg" alt="avatar"> <i class="fa fa-angle-down"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
-                                    <li class="dropdown-header text-center">Account</li>
-                                    <li>
-                                        <a href="page_ready_timeline.html">
-                                            <i class="fa fa-clock-o fa-fw pull-right"></i>
-                                            <span class="badge pull-right">10</span>
-                                            Updates
-                                        </a>
-                                        <a href="page_ready_inbox.html">
-                                            <i class="fa fa-envelope-o fa-fw pull-right"></i>
-                                            <span class="badge pull-right">5</span>
-                                            Messages
-                                        </a>
-                                        <a href="page_ready_pricing_tables.html"><i class="fa fa-magnet fa-fw pull-right"></i>
-                                            <span class="badge pull-right">3</span>
-                                            Subscriptions
-                                        </a>
-                                        <a href="page_ready_faq.html"><i class="fa fa-question fa-fw pull-right"></i>
-                                            <span class="badge pull-right">11</span>
-                                            FAQ
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="page_ready_user_profile.html">
-                                            <i class="fa fa-user fa-fw pull-right"></i>
-                                            Profile
-                                        </a>
-                                        <!-- Opens the user settings modal that can be found at the bottom of each page (page_footer.html in PHP version) -->
-                                        <a href="#modal-user-settings" data-toggle="modal">
-                                            <i class="fa fa-cog fa-fw pull-right"></i>
-                                            Settings
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="page_ready_lock_screen.html"><i class="fa fa-lock fa-fw pull-right"></i> Lock Account</a>
-                                        <a href="login.html"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
-                                    </li>
-                                    <li class="dropdown-header text-center">Activity</li>
-                                    <li>
-                                        <div class="alert alert-success alert-alt">
-                                            <small>5 min ago</small><br>
-                                            <i class="fa fa-thumbs-up fa-fw"></i> You had a new sale ($10)
-                                        </div>
-                                        <div class="alert alert-info alert-alt">
-                                            <small>10 min ago</small><br>
-                                            <i class="fa fa-arrow-up fa-fw"></i> Upgraded to Pro plan
-                                        </div>
-                                        <div class="alert alert-warning alert-alt">
-                                            <small>3 hours ago</small><br>
-                                            <i class="fa fa-exclamation fa-fw"></i> Running low on space<br><strong>18GB in use</strong> 2GB left
-                                        </div>
-                                        <div class="alert alert-danger alert-alt">
-                                            <small>Yesterday</small><br>
-                                            <i class="fa fa-bug fa-fw"></i> <a href="javascript:void(0)" class="alert-link">New bug submitted</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- END User Dropdown -->
-                        </ul>
-                        <!-- END Right Header Navigation -->
-                    </header>
+                    
                     <!-- END Header -->
 
                     <!-- Page content -->
@@ -435,10 +309,11 @@
                                             <td class="text-center"><?php echo $listarusuarios['Email']; ?></td>
                                             <td class="text-center">
                                                 <div class="btn-group">
-                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
-                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
+                                                    <a href="#" data-target="#modal-user-settings" onclick="selUsuario(''<?php echo $listarusuarios['id_usuario']; ?> ''<?php echo $listarusuarios['Nombre']; ?>''<?php echo $listarusuarios['Apellidos']; ?>''<?php echo $listarusuarios['Email']; ?>)" data-toggle="modal" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
+                                                    <a href="<?php echo base_url()?>index.php/Usuarios/eliminarUsuarios/<?php echo $listarusuarios['id_usuario']; ?>" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
                                                 </div>
                                             </td>
+                                            <!--<td style="display:none"><?php $datos// = array('Nombre'=> $listarusuarios['Nombre'], 'Apellido' => $listarusuarios['Apellidos'], 'Email' => $listarusuarios['Email']);?></td> -->
                                         </tr>
                                         <?php } // Cerramos foreach ?>  
                                     </tbody>
@@ -475,49 +350,67 @@
                 <div class="modal-content">
                     <!-- Modal Header -->
                     <div class="modal-header text-center">
-                        <h2 class="modal-title"><i class="fa fa-pencil"></i> Settings</h2>
+                        <h2 class="modal-title"><i class="fa fa-pencil"></i> Actualizar</h2>
                     </div>
                     <!-- END Modal Header -->
 
                     <!-- Modal Body -->
                     <div class="modal-body">
-                        <form action="index.html" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" onsubmit="return false;">
+                        <form action="modificarUsuario/<?php echo $listarusuarios['id_usuario'];?>" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" onsubmit="return false;">
+                        <!-- parametros ocultos -->
+                        <input type="hidden" id="id">
                             <fieldset>
-                                <legend>Vital Info</legend>
+                                <legend>Información</legend>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label">Username</label>
+                                    <label class="col-md-4 control-label" for="user-settings-email">Nombre</label>
                                     <div class="col-md-8">
-                                        <p class="form-control-static">Admin</p>
+                                        <input type="text" id="Nombre" name="Nombre" class="form-control" value="">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-email">Email</label>
+                                    <label class="col-md-4 control-label" for="user-settings-email">Apellidos</label>
                                     <div class="col-md-8">
-                                        <input type="email" id="user-settings-email" name="user-settings-email" class="form-control" value="admin@example.com">
+                                        <input type="text" id="Apellidos" name="Apellidos" class="form-control" value="">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-notifications">Email Notifications</label>
+                                    <label class="col-md-4 control-label" for="user-settings-email">Correo</label>
                                     <div class="col-md-8">
-                                        <label class="switch switch-primary">
-                                            <input type="checkbox" id="user-settings-notifications" name="user-settings-notifications" value="1" checked>
-                                            <span></span>
-                                        </label>
+                                        <input type="email" id="Email" name="Email" class="form-control" value="">
                                     </div>
                                 </div>
                             </fieldset>
                             <fieldset>
-                                <legend>Password Update</legend>
+                                <legend>Actualizar contraseña</legend>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-password">New Password</label>
+                                    <label class="col-md-4 control-label" for="user-settings-password">Nueva contraseña</label>
                                     <div class="col-md-8">
-                                        <input type="password" id="user-settings-password" name="user-settings-password" class="form-control" placeholder="Please choose a complex one..">
+                                        <input type="password" id="contraseña" name="contraseña" class="form-control" placeholder="Please choose a complex one..">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-repassword">Confirm New Password</label>
+                                    <label class="col-md-4 control-label" for="user-settings-repassword">Confirmar nueva contraseña</label>
                                     <div class="col-md-8">
-                                        <input type="password" id="user-settings-repassword" name="user-settings-repassword" class="form-control" placeholder="..and confirm it!">
+                                        <input type="password" id="confirmarcontraseña" name="confirmarcontraseña" class="form-control" placeholder="..and confirm it!">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Información de la escuela</legend>
+                               <div class="form-group">
+                                    <label class="col-md-4 control-label" for="example-chosen-multiple">Selecciona un curso</label>
+                                    <div class="col-md-6">
+                                        <select id="example-chosen-multiple" name="example-chosen-multiple" class="select-chosen" data-placeholder="Choose a Country.." style="width: 250px;" multiple>
+                                            <option value="United States">United States</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="example-chosen-multiple">Selecciona asignaturas</label>
+                                    <div class="col-md-6">
+                                        <select id="example-chosen-multiple" name="example-chosen-multiple" class="select-chosen" data-placeholder="Choose a Country.." style="width: 250px;" multiple>
+                                            <option value="United States">United States</option>
+                                        </select>
                                     </div>
                                 </div>
                             </fieldset>
@@ -539,5 +432,14 @@
         <!-- Load and execute javascript code used only in this page -->
         <script src="js/pages/tablesDatatables.js"></script>
         <script>$(function(){ TablesDatatables.init(); });</script>
+
+        <script type="text/javascript">
+            selUsuario = function(id, nombre, apellidos, email){
+                $('#id').val(id);
+                $('#Nombre').val(nombre);
+                $('#Apellidos').val(apellidos);
+                $('#Email').val(email);
+            };
+        </script>
     </body>
 </html>

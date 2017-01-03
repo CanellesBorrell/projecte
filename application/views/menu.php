@@ -53,6 +53,9 @@
                                     <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Gestión de Tareas</span></a>
                                 </li>
                                  <li>
+                                    <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Gestión de Foros</span></a>
+                                </li>
+                                 <li>
                                     <a href="<?php echo base_url();?>index.php/grupos/index_front"><i class="gi gi-charts sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Grupos</span></a>
                                 </li>
                                 
