@@ -274,11 +274,13 @@
                     <!-- Page content -->
                     <div id="page-content">
                         <!-- Quick Stats -->
+
                         <div class="row text-center">
+                        <h2><?php echo validation_errors(); ?></h2>
                             <div class="col-sm-6 col-lg-3">
                                 <a href="javascript:void(0)" onclick="$('#modal-insertar').modal('show');" class="widget widget-hover-effect2">
                                     <div class="widget-extra themed-background-success">
-                                        <h4 class="widget-content-light"><strong>Add New</strong> Product</h4>
+                                        <h4 class="widget-content-light"><strong>Añadir nuevo</strong> Grupo</h4>
                                     </div>
                                     <div class="widget-extra-full"><span class="h2 text-success animation-expandOpen"><i class="fa fa-plus"></i></span></div>
                                 </a>
@@ -286,27 +288,12 @@
                             <div class="col-sm-6 col-lg-3">
                                 <a href="javascript:void(0)" class="widget widget-hover-effect2">
                                     <div class="widget-extra themed-background-danger">
-                                        <h4 class="widget-content-light"><strong>Out of</strong> Stock</h4>
+                                        <h4 class="widget-content-light"><strong>Numero de </strong> Grupos</h4>
                                     </div>
-                                    <div class="widget-extra-full"><span class="h2 text-danger animation-expandOpen">71</span></div>
+                                    <div class="widget-extra-full"><span class="h2 text-danger animation-expandOpen"><?php echo $this->db->count_all_results('Grupos'); ?></span></div>
                                 </a>
                             </div>
-                            <div class="col-sm-6 col-lg-3">
-                                <a href="javascript:void(0)" class="widget widget-hover-effect2">
-                                    <div class="widget-extra themed-background-dark">
-                                        <h4 class="widget-content-light"><strong>Top</strong> Sellers</h4>
-                                    </div>
-                                    <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">20</span></div>
-                                </a>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">
-                                <a href="javascript:void(0)" class="widget widget-hover-effect2">
-                                    <div class="widget-extra themed-background-dark">
-                                        <h4 class="widget-content-light"><strong>All</strong> Products</h4>
-                                    </div>
-                                    <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">4.982</span></div>
-                                </a>
-                            </div>
+                           
                         </div>
                         <!-- END Quick Stats -->
 
@@ -449,56 +436,29 @@
                 <div class="modal-content">
                     <!-- Modal Header -->
                     <div class="modal-header text-center">
-                        <h2 class="modal-title"><i class="fa fa-pencil"></i> Poronga</h2>
+                        <h2 class="modal-title"><i class="fa fa-pencil"></i> Crear Grupo</h2>
                     </div>
                     <!-- END Modal Header -->
 
                     <!-- Modal Body -->
                     <div class="modal-body">
-                        <form action="index.html" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" onsubmit="return false;">
+                        <form action="Grupos/insertarGrupos" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
                             <fieldset>
-                                <legend>Vital Info</legend>
+                                <legend></legend>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label">Username</label>
-                                    <div class="col-md-8">
-                                        <p class="form-control-static">Admin</p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-email">Email</label>
-                                    <div class="col-md-8">
-                                        <input type="email" id="user-settings-email" name="user-settings-email" class="form-control" value="admin@example.com">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-notifications">Email Notifications</label>
-                                    <div class="col-md-8">
-                                        <label class="switch switch-primary">
-                                            <input type="checkbox" id="user-settings-notifications" name="user-settings-notifications" value="1" checked>
-                                            <span></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <fieldset>
-                                <legend>Password Update</legend>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-password">New Password</label>
-                                    <div class="col-md-8">
-                                        <input type="password" id="user-settings-password" name="user-settings-password" class="form-control" placeholder="Please choose a complex one..">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-repassword">Confirm New Password</label>
-                                    <div class="col-md-8">
-                                        <input type="password" id="user-settings-repassword" name="user-settings-repassword" class="form-control" placeholder="..and confirm it!">
-                                    </div>
+                                    <label class="col-md-4 control-label" for="Grupo">Grupo <span class="text-danger">*</span></label>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" id="Grupo" name="Grupo" class="form-control" placeholder="Introduce un grupo">
+                                                
+                                            </div>
+                                        </div>
                                 </div>
                             </fieldset>
                             <div class="form-group form-actions">
                                 <div class="col-xs-12 text-right">
-                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-sm btn-primary">Save Changes</button>
+                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-sm btn-primary">Aceptar</button>
                                 </div>
                             </div>
                         </form>

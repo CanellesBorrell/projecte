@@ -14,10 +14,9 @@ class Modelo_grupos extends CI_Model{
         return $query->result_array();
     }
 
-    function insertarGrupo($grupo, $profesorasig) {
+    function insertarGrupo($grupo) {
         $data = array(
-            'Grupo'=> $grupo,
-            'Profesor_asignado'=> $profesorasig);
+            'Grupo'=> $grupo);
         $this->db->insert('Grupos', $data);
     }
 

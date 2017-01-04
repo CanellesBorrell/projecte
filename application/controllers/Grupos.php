@@ -49,19 +49,17 @@ class Grupos extends CI_Controller {
 	}
 
 	public function insertarGrupos() {
-		$this->form_validation->set_rules('Grupo', 'Grupo', 'required|xss_clean');
-		$this->form_validation->set_rules('Profesor_asignado', 'Profesor_asignado', 'required|xss_clean');
+		$this->form_validation->set_rules('Grupo', 'Grupo', 'required');
 		$this->form_validation->set_message('required', 'El campo %s es obligado');
 	
 		if($this->form_validation->run() == FALSE) {
 			$data = $this->modelo_grupos->getGrupo();
-			$this->load->view('grupos', $data);
+			redirect('Grupos');
 		}
 		else {
 			$grupo = $this->input->post('Grupo');
-			$profeasignado = $this->input->post('Profesor_asignado');
-			$this->modelo_grupos->insertarGrupo($grupo, $profeasignado);
-			redirect('Grupos/grupos');
+			$this->modelo_grupos->insertarGrupo($grupo);
+			redirect('Grupos');
 		}
 	}
 
