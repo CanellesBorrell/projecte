@@ -30,6 +30,7 @@
                                     <a href="index.html" class=" active"><i class="gi gi-stopwatch sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Panel de control</span></a>
                                 </li>
                                
+                               <?php if ($sesio['id_rol'] !=4){ ?>
                                 <li class="sidebar-header">
                                    
                                     <span class="sidebar-header-title">Gestión de usuarios</span>
@@ -40,6 +41,7 @@
                                 <li>
                                     <a href="<?php echo base_url();?>index.php/usuarios"><i class="gi gi-share_alt sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Listado de usuarios</span></a>
                                 </li>
+								<?php } ?>
                                 <li class="sidebar-header">
                                     <span class="sidebar-header-title">Escuela</span>
                                 </li>
