@@ -6,14 +6,17 @@ class Grupos extends CI_Controller {
       $this->load->database();   // Carreguem la base de dades
       $this->load->library('form_validation');  // La llibreria per fer els camps requerits
       $this->load->model('modelo_grupos');
+      $this->load->model('modelo_asignaturas');
       $sesio = $this->session->userdata('logged_in');
     } 
    	public function index() {
    		if($this->session->userdata('logged_in')){
 			$sesio = $this->session->userdata('logged_in');
 			$data = $this->modelo_grupos->getGrupo();
+			$asignatures = $this->modelo_asignaturas->getAsignatura();
 			$dades = array(
 						'sesio' => $sesio,
+						'asignatura' => $asignatures,
 						'data' => $data);
 				if($data == null) {
 					$this->load->view('grupos', $dades);	

@@ -6,7 +6,7 @@
 -- Generation Time: Dec 31, 2016 at 12:08 AM
 -- Server version: 5.5.46
 -- PHP Version: 5.3.10-1ubuntu3.21
-DROP DATABASE projecte;
+
 CREATE DATABASE projecte;
 USE projecte;
 

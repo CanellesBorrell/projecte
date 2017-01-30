@@ -404,7 +404,7 @@
                             <div class="col-sm-6 col-lg-3">
                                 <a href="javascript:void(0)" onclick="$('#modal-insertar').modal('show');" class="widget widget-hover-effect2">
                                     <div class="widget-extra themed-background-success">
-                                        <h4 class="widget-content-light"><strong>Add New</strong> Product</h4>
+                                        <h4 class="widget-content-light"><strong>Añadir nueva</strong> Asignatura</h4>
                                     </div>
                                     <div class="widget-extra-full"><span class="h2 text-success animation-expandOpen"><i class="fa fa-plus"></i></span></div>
                                 </a>
@@ -412,27 +412,20 @@
                             <div class="col-sm-6 col-lg-3">
                                 <a href="javascript:void(0)" class="widget widget-hover-effect2">
                                     <div class="widget-extra themed-background-danger">
-                                        <h4 class="widget-content-light"><strong>Out of</strong> Stock</h4>
+                                        <h4 class="widget-content-light"><strong>Numero de</strong> asignaturas</h4>
                                     </div>
-                                    <div class="widget-extra-full"><span class="h2 text-danger animation-expandOpen">71</span></div>
+                                    <div class="widget-extra-full"><span class="h2 text-danger animation-expandOpen"><?php echo $this->db->count_all_results('Asignaturas'); ?></span></div>
                                 </a>
                             </div>
                             <div class="col-sm-6 col-lg-3">
-                                <a href="javascript:void(0)" class="widget widget-hover-effect2">
+                                 <a href="javascript:void(0)" onclick="$('#modal-agrupar').modal('show');" class="widget widget-hover-effect2">
                                     <div class="widget-extra themed-background-dark">
                                         <h4 class="widget-content-light"><strong>Top</strong> Sellers</h4>
                                     </div>
                                     <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">20</span></div>
                                 </a>
                             </div>
-                            <div class="col-sm-6 col-lg-3">
-                                <a href="javascript:void(0)" class="widget widget-hover-effect2">
-                                    <div class="widget-extra themed-background-dark">
-                                        <h4 class="widget-content-light"><strong>All</strong> Products</h4>
-                                    </div>
-                                    <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">4.982</span></div>
-                                </a>
-                            </div>
+                           
                         </div>
                         <!-- END Quick Stats -->
 
@@ -570,61 +563,34 @@
         <!-- END User Settings -->
 
         <!-- Modal para insertar datos  -->
-        <div id="modal-insertar" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+       <div id="modal-insertar" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <!-- Modal Header -->
                     <div class="modal-header text-center">
-                        <h2 class="modal-title"><i class="fa fa-pencil"></i> Poronga</h2>
+                        <h2 class="modal-title"><i class="fa fa-pencil"></i> Crear Asignatura</h2>
                     </div>
                     <!-- END Modal Header -->
 
                     <!-- Modal Body -->
                     <div class="modal-body">
-                        <form action="index.html" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" onsubmit="return false;">
+                        <form action="asignaturas/insertarAsignaturas" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
                             <fieldset>
-                                <legend>Vital Info</legend>
+                                <legend></legend>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label">Username</label>
-                                    <div class="col-md-8">
-                                        <p class="form-control-static">Admin</p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-email">Email</label>
-                                    <div class="col-md-8">
-                                        <input type="email" id="user-settings-email" name="user-settings-email" class="form-control" value="admin@example.com">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-notifications">Email Notifications</label>
-                                    <div class="col-md-8">
-                                        <label class="switch switch-primary">
-                                            <input type="checkbox" id="user-settings-notifications" name="user-settings-notifications" value="1" checked>
-                                            <span></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <fieldset>
-                                <legend>Password Update</legend>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-password">New Password</label>
-                                    <div class="col-md-8">
-                                        <input type="password" id="user-settings-password" name="user-settings-password" class="form-control" placeholder="Please choose a complex one..">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-repassword">Confirm New Password</label>
-                                    <div class="col-md-8">
-                                        <input type="password" id="user-settings-repassword" name="user-settings-repassword" class="form-control" placeholder="..and confirm it!">
-                                    </div>
+                                    <label class="col-md-4 control-label" for="Asignatura">Asignatura<span class="text-danger">*</span></label>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" id="Asignatura" name="Asignatura" class="form-control" placeholder="Introduce una asignatura">
+                                                
+                                            </div>
+                                        </div>
                                 </div>
                             </fieldset>
                             <div class="form-group form-actions">
                                 <div class="col-xs-12 text-right">
-                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-sm btn-primary">Save Changes</button>
+                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-sm btn-primary">Aceptar</button>
                                 </div>
                             </div>
                         </form>
@@ -636,6 +602,46 @@
             </div>
         </div>
         <!-- END del Modal para insertar -->
+         <div id="modal-agrupar" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header text-center">
+                        <h2 class="modal-title"><i class="fa fa-pencil"></i>Insertar asignaturas</h2>
+                    </div>
+                    <!-- END Modal Header -->
+
+                    <!-- Modal Body -->
+                    <div class="modal-body">
+                        <form action="Grupos/insertarGrupos" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+                            <fieldset>
+                                <div class="form-group">
+                                                <label class="col-md-4 control-label" for="example-chosen-multiple">Chosen Multiple</label>
+                                                <div class="col-md-6">
+                                                    <select id="example-chosen-multiple" name="example-chosen-multiple" class="select-chosen" data-placeholder="Choose a Country.." style="width: 250px;" multiple>
+                                                    <?php foreach($usuario as $llistarusuarios){ ?>
+                                                        <option value="<?php echo $llistarusuarios['id_usuario']; ?>"><?php echo $llistarusuarios['Nombre']; ?> <?php echo $llistarusuarios['Apellidos']; ?></option>
+
+                                                   <?php } ?>
+                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+                            </fieldset>
+                            <div class="form-group form-actions">
+                                <div class="col-xs-12 text-right">
+                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-sm btn-primary">Aceptar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- END Modal Body -->
+                    
+                    
+                </div>
+            </div>
+        </div>
 
        
     </body>

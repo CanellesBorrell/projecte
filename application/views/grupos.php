@@ -293,6 +293,14 @@
                                     <div class="widget-extra-full"><span class="h2 text-danger animation-expandOpen"><?php echo $this->db->count_all_results('Grupos'); ?></span></div>
                                 </a>
                             </div>
+                             <div class="col-sm-6 col-lg-3">
+                                 <a href="javascript:void(0)" onclick="$('#modal-agrupar').modal('show');" class="widget widget-hover-effect2">
+                                    <div class="widget-extra themed-background-dark">
+                                        <h4 class="widget-content-light"><strong>Top</strong> Sellers</h4>
+                                    </div>
+                                    <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen">20</span></div>
+                                </a>
+                            </div>
                            
                         </div>
                         <!-- END Quick Stats -->
@@ -454,6 +462,46 @@
                                             </div>
                                         </div>
                                 </div>
+                            </fieldset>
+                            <div class="form-group form-actions">
+                                <div class="col-xs-12 text-right">
+                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-sm btn-primary">Aceptar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- END Modal Body -->
+                    
+                    
+                </div>
+            </div>
+        </div>
+        <div id="modal-agrupar" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header text-center">
+                        <h2 class="modal-title"><i class="fa fa-pencil"></i>Insertar asignaturas</h2>
+                    </div>
+                    <!-- END Modal Header -->
+
+                    <!-- Modal Body -->
+                    <div class="modal-body">
+                        <form action="Grupos/insertarGrupos" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+                            <fieldset>
+                                <div class="form-group">
+                                                <label class="col-md-4 control-label" for="example-chosen-multiple">Chosen Multiple</label>
+                                                <div class="col-md-6">
+                                                    <select id="example-chosen-multiple" name="example-chosen-multiple" class="select-chosen" data-placeholder="Choose a Country.." style="width: 250px;" multiple>
+                                                    <?php foreach($asignatura as $llistargrupos){ ?>
+                                                        <option value="<?php echo $llistargrupos['id_asignatura']; ?>"><?php echo $llistargrupos['Asignatura']; ?></option>
+
+                                                   <?php } ?>
+                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
                             </fieldset>
                             <div class="form-group form-actions">
                                 <div class="col-xs-12 text-right">
